@@ -10,12 +10,8 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  host: localhost
 
 development:
   <<: *default
@@ -57,8 +53,5 @@ test:
 #
 production:
   <<: *default
-  database: ajax_app_production
-  username: ajaxapp_38648
-  password: <%= ENV['AJAX_APP_DATABASE_PASSWORD'] %>
   adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
