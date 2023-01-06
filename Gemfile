@@ -58,3 +58,11 @@ gem 'pry-rails'
 group :production do
   gem 'pg'
 end
+
+gem 'doorkeeper'
+gem 'sorcery'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_rewinder'
+end
